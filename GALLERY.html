@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<div class="parallax">
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+
+<style>
+.footer {
+   position: center;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: silver;
+   color: white;
+   text-align: center;
+}
+</style>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="MAJOR ARCANAS.html">MAJOR ARCANAS</a>
+  <a href="MINOR ARCANAS.html">MINOR ARCANAS</a>
+  <a href="MORE MINOR ARCANAS.html">MORE MINOR ARCANAS</a>
+  <a href="READING.html">READING</a>
+  <a href="STORE.html">STORE</a>
+  <a href="GALLERY.html">GALLERY</a>
+</div>
+
+<div style="padding: relative:16px">
+
+
+
+<canvas>
+
+<script type="text/javascript">
+	"use strict";
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+const branch = l => {
+    if (l > 8) return;
+    ctx.save();
+    ctx.scale(1 - l * 0.1, 0.5);
+    ctx.fillRect(-0.5, -0.5, 1, 1);
+    ctx.restore();
+    if (Math.random() * 1.04 < 0.04) {
+        ctx.save();
+        ctx.translate(-0.1, 0);
+        ctx.rotate((Math.random() * 5 + 15) * Math.PI / 180);
+        ctx.translate(0, 0.3);
+        ctx.scale(0.7 * 0.9999995, 0.7 * 0.9999995);
+        branch(l + 1);
+        ctx.restore();
+        ctx.translate(0.1, 0);
+        ctx.rotate((-Math.random() * 15 - 10) * Math.PI / 180);
+        ctx.translate(0, 0.3);
+        ctx.scale(0.7 * 0.9999995, 0.7 * 0.9999995);
+        return branch(l + 1);
+    } else {
+        ctx.rotate((Math.random() * 10 - 5) * Math.PI / 180);
+        ctx.translate(0, 0.3);
+        ctx.scale(0.9999995, 0.9999995);
+        return branch(l);
+    }
+};
+const requestAnimationFrame = () => {
+    return new Promise(resolve => {
+        window.requestAnimationFrame(resolve);
+    });
+};
+let running = false;
+async function start() {
+    if (running === true) return;
+    running = true;
+    const w = (canvas.width = canvas.offsetWidth * 2);
+    const h = (canvas.height = canvas.offsetHeight * 2);
+    ctx.fillStyle = "#738073";
+    ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 50; i++) {
+        ctx.save();
+        ctx.translate(w * 0.2 + Math.random() * w * 0.6, h);
+        ctx.scale(-20 - i * 0.5, -20 - i * 0.5);
+        ctx.fillStyle = `hsl(0, 0%, ${100 - i * 2}%)`;
+        branch(0);
+        ctx.restore();
+        await requestAnimationFrame();
+    }
+    running = false;
+}
+["click", "touchdown"].forEach(event => {
+    document.addEventListener(event, start, false);
+});
+start();
+
+
+</script>
+</canvas>
+
+
+
+
+
+	<style>
+body,
+html {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:black;
+    user-select: none;
+
+}
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    touch-action: none;
+    content-zooming: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('bg.png');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+</style>
+
+<div class="parallax"></div>
+
+<div style="height:1000px;background-color:black;font-size:36px">
+<style> 
+body {
+    background-image: url("bg.png");
+height: 100%
+background-position:center;
+background-repeat: repeat;
+background-size:100%;
+
+}
+</style>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.9; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 5;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: black;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+
+<!-- style type="text/css">
+    img {
+    border-radius: 10%;
+ }
+    #scroller_container {
+        padding: 2px;
+        margin: 0 auto;
+        width: 530px;
+        overflow: hidden;
+        line-height:0;
+        font-size:0;
+    }
+    #scroller_container div {
+        float: left;
+        vertical-align: baseline;
+    }
+    #scroller_container>div {
+        position: relative;
+        white-space: nowrap;
+        width: 100%;
+        padding: 22px 0;
+    }
+    #scroller_container>div a,
+    #scroller_container>div a img {
+        padding: 0;
+        margin:0;
+    }
+    #scroller_container>div a img {
+        margin: 0 1px;
+        border:2;
+        border-color: black;
+    }
+</style>
+<div>
+<img src="all.png" style="width:100%">
+</div>
+
+ -->
+<!-- <script type="text/javascript">
+    var _scroller;
+    _scroller = function () { 
+        return{
+            speed:10, 
+            direct:-1,
+            position:0,
+            t:null,
+            
+            init: function () {
+                var el;
+                
+                el = document.getElementById('scroller_container');
+                _scroller.addEvent(el, 'mousewheel', _scroller.wheel);
+                _scroller.addEvent(el, 'DOMMouseScroll', _scroller.wheel);
+
+                _scroller.timer(_scroller.direct); 
+            },
+
+            
+            wheel: function (e) {
+                _scroller.stop();
+                e = e ? e : window.event;
+                
+                var wheelData = e.detail ? e.detail * -1 : e.wheelDelta / 40;
+
+                
+                if (Math.abs(wheelData) > 100) {
+                    wheelData = Math.round(wheelData / 100);
+                }
+                
+                _scroller.direct=wheelData>0?1:-1;
+                _scroller.timer(_scroller.direct);
+                if (window.event) {
+                    e.cancelBubble = true;
+                    e.returnValue = false;
+                    e.cancel = true;
+                }
+                if (e.stopPropagation && e.preventDefault) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }
+                return false;
+            },
+
+            
+            scroll: function (wheel) {
+                var el = document.getElementById('scroller_container').firstElementChild;
+                var o, oi, width;
+                _scroller.position += wheel;
+                if (wheel>0) {
+                    if (_scroller.position >= 0) { 
+                        o=el;
+                        oi=o.lastElementChild; 
+                        width=oi.firstElementChild.clientWidth; 
+                        o.insertBefore(oi,o.firstElementChild);
+                        _scroller.position-=width;
+                   }
+                }
+                else {
+                    o=el;
+                    oi=o.firstElementChild; 
+                    width=oi.firstElementChild.clientWidth; 
+                    if(_scroller.position < -width){ 
+                        o.appendChild(oi);
+                        _scroller.position+=width;
+                    }
+                }
+                el.style.left = _scroller.position + 'px';
+            },
+
+          
+            timer: function (wheel) {
+                _scroller.stop();
+                _scroller.t = setInterval("_scroller.scroll(" + wheel + ");", _scroller.speed);
+            },
+
+         
+            stop: function () {
+                if (_scroller.t != null) {
+                    clearInterval(_scroller.t);
+                    _scroller.t = null;
+                }
+            },
+
+        
+            addEvent:function(el, evType, fn, useCapture) {
+                if (el.addEventListener) {
+                    el.addEventListener(evType, fn, useCapture);
+                }else if (el.attachEvent) {
+                    var r = el.attachEvent('on' + evType, fn);
+                }else el['on' + evType] = fn;
+             }
+        };
+    }();
+    
+    window.onload=function(){setTimeout(_scroller.init,200);}; 
+</script>
+<div id="scroller_container" onmousemove="_scroller.stop();" onmouseout="_scroller.timer(_scroller.direct);">
+    <div>
+    <a href="fool.png" onclick="return!1"><img src="fool.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="magical.png" onclick="return!1"><img src="magical.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="world.png" onclick="return!1">< <img src="world.png" width="60%" border="6" bgcolor="black" alt=""></a>
+    <a href="strengh.png" onclick="return!1">< <img src="strengh.png" width="60%" border="6" bgcolor="black" alt=""></a>
+    <a href="popess.png" onclick="return!1"><img src="popess.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="tower.png"onclick="return!1"><<img src="tower.png" width="60%" border="6" bgcolor="black" alt=""></a>
+    <a href="devil.png"onclick="return!1">< <img src="devil.png" width="60%" border="6" bgcolor="black" alt=""></a>
+    <a href="star.png"onclick="return!1"><img src="star.png"<img src="thestar.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="lovers.png"onclick="return!1"><img src="lovers.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="moon.png"onclick="return!1"><img src="moon.png"<img src="thestar.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="death.png"onclick="return!1"><img src="death.png"<img src="thestar.png" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="Temperance.jpg"onclick="return!1"><img src="temperance.jpg"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="chariot.png"onclick="return!1"><img src="chariot.png"<img src="thechariot.png"width= "60%"border="6" bgcolor="black"alt=""></a>
+    <a href="justice.png"onclick="return!1"><img src="justice.png" width="60%"border="6" bgcolor="black"alt=""></a>
+    <a href="hangedman.png"onclick="return!1"><img src="hangedman.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="sun.png"onclick="return!1"><img src="sun.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="emperor.png"onclick="return!1"><img src="emperor.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="hermit.png"onclick="return!1"><img src="hermit.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="empress.png"onclick="return!1"><img src="empress.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="knc.png"onclick="return!1"><img src="knc.png" width="60%" border="6"bgcolor="black" alt=""></a>
+    <a href="knsw.png"onclick="return!1"><img src="knsw.png"width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="knp.png"onclick="return!1"><img src="knp.png" width="60%" border="6"bgcolor="black" alt=""></a>
+    <a href="knw.png"onclick="return!1"><img src="knw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="kinc.png"onclick="return!1"><img src="kinc.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="kingp.png"onclick="return!1"><img src="kingp.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="kinsw.png"onclick="return!1"><img src="kinsw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="kinw.png"onclick="return!1"><img src="kinw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="pc.png"onclick="return!1"><img src="pc.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="pp.png"onclick="return!1"><img src="pp.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="psw.png"onclick="return!1"><img src="psw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+     <a href="pw.png"onclick="return!1"><img src="pw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="qsw.png"onclick="return!1"><img src="qsw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="qp.png"onclick="return!1"><img src="qp.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="qw.png"onclick="return!1"><img src="qw.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    <a href="qc.png"onclick="return!1"><img src="qc.png"" width="60%" border="6" bgcolor="black"alt=""></a>
+    
+    </div>
+
+ -->
+
+
+
+<div class="footer">
+  <p><a href = "https://www.artmarinabozin.com">artmarinabozin.com</a>
+    <div>
+<a href = "https://www.facebook.com/mbozin">facebook.com/mbozin</a>
+    <div>
+<a href = "https://www.instagram.com/artbozin/">instagram.com/artbozin</a>
+
+</div>
+
+
+
+        <small>
+            <i>Copyright &copy 2018 Artmarinabozin.com</i></small>
+            <br>
+            <br>
+</body>
+</html> 

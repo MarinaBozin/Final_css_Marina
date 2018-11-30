@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>get your reading</title>
+</head>
+<body>
+
+<div class="scene">
+  <div class="card">
+    <div class="card__face card__face--front">front</div>
+    <div class="card__face card__face--back">back</div>
+
+<script type="text/javascript">
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
+</script>
+<div class="card__face card__face--front">
+<img src="empress.png" style="width:100%">
+</div>
+ <div class="card__face card__face--back">
+ <img src="back.png" style="width:110%">
+ </div>	
+    <style type="text/css">
+.scene {
+  width: 200px;
+  height: 260px;
+  perspective: 600px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.card__face--front {
+
+  background: red;
+}
+
+.card__face--back {
+  background: blue;
+  transform: rotateY( 180deg );
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+.card { transform-origin: center right; }
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+</style>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
